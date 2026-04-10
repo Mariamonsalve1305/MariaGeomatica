@@ -41,8 +41,6 @@ This project analyzes the intricate relationship between urban mobility patterns
 
 ## 🛠️ Technical Toolkit
 
-| Category | Tools |
-| :--- | :--- |
 | **Language** | **Python 3.x** |
 | **Data Manipulation** | Pandas, NumPy, SQL |
 | **Geospatial Analysis** | GeoPandas, Shapely, PyProj |
