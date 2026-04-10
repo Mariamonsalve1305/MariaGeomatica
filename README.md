@@ -49,5 +49,5 @@ This project analyzes the intricate relationship between urban mobility patterns
 
 ## 📂 How to View the Project
 The complete, step-by-step analysis with code, cleaning processes, and visualizations can be viewed directly in the Jupyter Notebook file included in this repository: 
-👉 **[Haz clic aquí para ver el Notebook del Proyecto](https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Proyecto1.ipynb)**
+👉 **[Ver Proyecto](https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Proyecto1.ipynb)**
 
