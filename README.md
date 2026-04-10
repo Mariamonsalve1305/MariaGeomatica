@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Ingenier%C3%ADa%20ambiental%20y%20an%C3%A1lisis%20geoespacial.png?raw=true" alt="Banner Ingeniera Geomática" width="100%" style="max-width:100%; height:auto;">
+  <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Gemini_Generated_Image_se0l0ase0l0ase0l.png?raw=true" alt="Banner Ingeniera Geomática" width="100%" style="max-width:100%; height:auto;">
 </p>
 
 <br>
