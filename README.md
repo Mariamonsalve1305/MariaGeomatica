@@ -18,11 +18,12 @@ I specialize in bridging the gap between environmental challenges and technical 
 
 ---
 
-### 🛠️ Tech Stack & Expertise
+### 🛠️ Technical Toolkit
 
-* **Geospatial Analysis:** ArcGIS Pro, QGIS, Google Earth Engine.
-* **Data Science:** Python (Pandas, NumPy, Geopandas), SQL, Data Cleaning & Normalization.
-* **Visualization:** Power BI, Matplotlib, Plotly, Mapbox.
-* **Environmental Engineering:** Land-use planning, Impact assessment, Spatial statistics.
-
+| Category | Tools |
+| :--- | :--- |
+| **Geospatial** | ArcGIS Pro, QGIS, Google Earth Engine, PostGIS |
+| **Data Science** | Python (Pandas, GeoPandas), SQL, ETL Processes |
+| **Visualization** | Power BI, Tableau, Matplotlib, Plotly |
+| **Environmental** | Land Cover Analysis, Hydrological Modeling |
 ---
