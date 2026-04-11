@@ -7,6 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <title>Maria Monsalve | Geospatial Portfolio</title>
+
+<!-- LIBRERÍA PARTICLES -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 <style>
 
 /* =========================
@@ -116,6 +120,53 @@ body {
 }
 
 /* =========================
+   COMPONENTS
+========================= */
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 25px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #38bdf8;
+    color: #0f172a;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tags {
+    margin-top: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background: #1d4ed8;
+    color: #fff;
+    padding: 6px 12px;
+    margin: 5px 5px 0 0;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.skills {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #cbd5f5;
+}
+
+/* =========================
    SECTIONS
 ========================= */
 .section {
@@ -125,6 +176,9 @@ body {
 }
 
 </style>
+</head>
+
+<body>
 
 <!-- HEADER CON PARTICULAS -->
 <div class="header">
@@ -158,67 +212,6 @@ particlesJS("particles-js", {
   }
 });
 </script>
-
-/* TARJETA */
-.card {
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 15px;
-    margin-top: 25px;
-    transition: 0.3s;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* BOTÓN */
-.button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 18px;
-    background: #38bdf8;
-    color: #0f172a;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* TAGS (KEYWORDS) */
-.tags {
-    margin-top: 20px;
-}
-
-.tag {
-    display: inline-block;
-    background: #1d4ed8;
-    color: #fff;
-    padding: 6px 12px;
-    margin: 5px 5px 0 0;
-    border-radius: 20px;
-    font-size: 0.8rem;
-}
-
-/* SKILLS */
-.skills {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: #cbd5f5;
-}
-</style> 
-</head>
-
-<body>
-
-<!-- HEADER -->
-<div class="header">
-    <div>
-        <h1>María Monsalve</h1>
-        <p>Geospatial Data Scientist | Environmental Intelligence</p>
-    </div>
-</div>
-
 <!-- ABOUT -->
 <div class="section">
     <h2>🌍 About Me</h2>
