@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Brand.png?raw=true" alt="Banner Ingeniera Geomática" width="100%" style="max-width:100%; height:auto;">
+  <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Brand.png?raw=true" alt="Brand" width="100%" style="max-width:100%; height:auto;">
 </p>
 
 <br>
