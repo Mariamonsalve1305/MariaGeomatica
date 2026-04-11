@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <title>Maria Monsalve | Geospatial Portfolio</title>
@@ -13,15 +12,14 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #0f172a;
+    background-color: #0b1120;
     color: #e2e8f0;
 }
 
-/* HEADER FULL WIDTH */
+/* HEADER MÁS DELGADO */
 .header {
-    width: 100%;
-    height: 60vh;
-    background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)),
+    height: 45vh;
+    background: linear-gradient(rgba(11,17,32,0.85), rgba(11,17,32,0.95)),
     url('https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Brand.png?raw=true');
     background-size: cover;
     background-position: center;
@@ -32,28 +30,28 @@ body {
 }
 
 .header h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin: 0;
 }
 
 .header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #94a3b8;
 }
 
-/* SECTIONS */
+/* SECCIONES */
 .section {
     max-width: 1000px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
-/* CARD STYLE (BLOG LOOK) */
+/* TARJETA */
 .card {
     background: #1e293b;
     padding: 25px;
     border-radius: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
     transition: 0.3s;
 }
 
@@ -61,7 +59,7 @@ body {
     transform: translateY(-5px);
 }
 
-/* BUTTON */
+/* BOTÓN */
 .button {
     display: inline-block;
     margin-top: 15px;
@@ -73,8 +71,26 @@ body {
     font-weight: bold;
 }
 
-.button:hover {
-    background: #0ea5e9;
+/* TAGS (KEYWORDS) */
+.tags {
+    margin-top: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background: #1d4ed8;
+    color: #fff;
+    padding: 6px 12px;
+    margin: 5px 5px 0 0;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* SKILLS */
+.skills {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #cbd5f5;
 }
 </style>
 </head>
@@ -92,21 +108,49 @@ body {
 <!-- ABOUT -->
 <div class="section">
     <h2>🌍 About Me</h2>
+
     <p>
-        I transform geospatial data into strategic insights for land management, environmental planning, and decision-making.
-        My work integrates GIS, data science, and environmental analysis to create impactful solutions.
+        My greatest purpose lies at the intersection of <b>Data Science</b> and <b>Land Management</b>. 
+        Throughout my career, I have honed the art of transforming layers of geographic information into strategic decision-making tools.
     </p>
+
+    <p>
+        I specialize in bridging the gap between environmental challenges and technical solutions. 
+        My proficiency in <b>ArcGIS, QGIS, and Power BI</b>, combined with a solid foundation in <b>SQL and Python</b>, 
+        allows me to address spatial complexity from a holistic perspective.
+    </p>
+
+    <!-- TAGS -->
+    <div class="tags">
+        <span class="tag">Python (Pandas, GeoPandas)</span>
+        <span class="tag">SQL</span>
+        <span class="tag">ETL Processes</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">Looker</span>
+        <span class="tag">ArcGIS Pro</span>
+        <span class="tag">QGIS</span>
+        <span class="tag">Google Earth Engine</span>
+        <span class="tag">PostGIS</span>
+    </div>
 </div>
 
-<!-- PROJECTS -->
+<!-- PROYECTO -->
 <div class="section">
-    <h2>📊 Featured Project</h2>
+    <h2>📊 Projects</h2>
 
     <div class="card">
-        <h3>Urban Mobility & Economic Indicators</h3>
+        <h3>Urban Mobility & Economic Indicators: A Data-Driven Analysis</h3>
+
         <p>
-            Data-driven analysis exploring the relationship between mobility patterns and economic performance in Latin America.
+            This project analyzes the intricate relationship between urban mobility patterns and key economic indicators in Latinoamerica. 
+            Using Python-based data science workflows, I integrate, clean, and standardize diverse datasets to uncover insights that inform sustainable land management and data-driven urban planning. 
+            The core of this analysis lies at the intersection of spatial dynamics and economic vitality, leveraging datasets to tell the story of how a city moves and prospers.
         </p>
+
+        <div class="skills">
+            <b>Skills:</b> Python 3.x, Pandas, NumPy, SQL, GeoPandas, Matplotlib, Seaborn, Power BI, Jupyter Notebooks
+        </div>
 
         <a class="button" href="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.ipynb" target="_blank">
             View Project
