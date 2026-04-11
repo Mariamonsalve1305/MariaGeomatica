@@ -49,5 +49,5 @@ This project analyzes the intricate relationship between urban mobility patterns
 
 ## 📂 How to View the Project
 The complete, step-by-step analysis with code, cleaning processes, and visualizations can be viewed directly in the Jupyter Notebook file included in this repository: 
-👉 **[Ver Proyecto](https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Urban Mobility and Economic Productivity in Latin American Cities.ipynb)** 
+👉 **[Ver Proyecto](https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.ipynb)** 
 
