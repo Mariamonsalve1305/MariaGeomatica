@@ -8,18 +8,86 @@
 
 <title>Maria Monsalve | Geospatial Portfolio</title>
 <style>
-    /* PROJECT IMAGE */
+
+/* =========================
+   BASE
+========================= */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0b1120;
+    color: #e2e8f0;
+}
+
+/* =========================
+   HEADER + PARTICLES
+========================= */
+.header {
+    position: relative;
+    height: 45vh;
+    overflow: hidden;
+
+    background: 
+        linear-gradient(
+            120deg,
+            rgba(11,17,32,0.5),
+            rgba(11,17,32,0.2)
+        ),
+        url('https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/FotoBrand.png?raw=true');
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* CONTENIDO SOBRE EL HEADER */
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background: rgba(0,0,0,0.25);
+    padding: 20px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    text-shadow: 0px 4px 20px rgba(0,0,0,0.6);
+}
+
+.header-content p {
+    margin-top: 8px;
+    color: #cbd5f5;
+    text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   PROJECT IMAGE
+========================= */
 .project-image {
     position: relative;
-    margin-top: 15px;
+    margin-top: 20px;
     overflow: hidden;
 }
 
 .project-image img {
     width: 100%;
-    max-width: 100%;
     display: block;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
 .project-image:hover img {
@@ -46,119 +114,23 @@
 .project-image:hover .overlay {
     opacity: 1;
 }
-/* PARTICULAS */
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
 }
 
-/* HEADER */
-.header {
-    position: relative;
-    height: 45vh;
-    overflow: hidden;
+</style>
 
-    background: 
-        linear-gradient(
-            120deg,
-            rgba(11,17,32,0.5),
-            rgba(11,17,32,0.2)
-        ),
-        url('https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/FotoBrand.png?raw=true');
-
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* CONTENIDO SOBRE PARTICULAS */
-.header-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    background: rgba(0,0,0,0.25);
-    padding: 20px 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(6px);
-}
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #0b1120;
-    color: #e2e8f0;
-}
-
-    #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-/* Asegura que el texto quede encima */
-.header {
-    position: relative;
-    overflow: hidden;
-}
-
-.header div {
-    position: relative;
-    z-index: 2;
-}
-    
-/* HEADER MÁS DELGADO */
-.header {
-    height: 45vh;
-    background: 
-        linear-gradient(
-            120deg,
-            rgba(11,17,32,0.6) 30%,
-            rgba(11,17,32,0.3) 60%,
-            rgba(11,17,32,0.7) 100%
-        ),
-        url('https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/FotoBrand.png?raw=true');
-    
-    background-size: cover;
-    background-position: center;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.header h1 {
-    font-size: 2.3rem;
-    margin: 0;
-    text-shadow: 0px 4px 20px rgba(0,0,0,0.6);
-}
-
-.header p {
-    font-size: 1.1rem;
-    color: #cbd5f5;
-    text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
-}
-
-.header div {
-    background: rgba(0,0,0,0.3);
-    padding: 20px 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(8px);
-}
 <!-- HEADER CON PARTICULAS -->
 <div class="header">
 
-    <!-- PARTICULAS -->
     <div id="particles-js"></div>
 
-    <!-- CONTENIDO -->
     <div class="header-content">
         <h1>María Monsalve</h1>
         <p>Geospatial Data Scientist | Environmental Intelligence</p>
@@ -166,7 +138,7 @@ body {
 
 </div>
 
-<!-- SCRIPT PARTICULAS -->
+<!-- SCRIPT PARTICLES -->
 <script>
 particlesJS("particles-js", {
   particles: {
@@ -186,12 +158,6 @@ particlesJS("particles-js", {
   }
 });
 </script>
-/* SECCIONES */
-.section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 50px 20px;
-}
 
 /* TARJETA */
 .card {
