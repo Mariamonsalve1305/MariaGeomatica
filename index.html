@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>María Monsalve | Geospatial Data Scientist</title>
+    <title>María Monsalve | Geospatial Portfolio</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    
+
     <style>
         :root {
             --bg-color: #030712;
-            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-bg: #0f172a;
             --card-border: rgba(56, 189, 248, 0.15);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
             --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.3);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
@@ -35,72 +36,52 @@
             overflow-x: hidden;
         }
 
-        /* Language Switcher */
-        .lang-switch {
+        /* Botón de Idioma Flotante */
+        .lang-switch-container {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
-            background: rgba(17, 24, 39, 0.8);
-            border: 1px solid var(--card-border);
-            padding: 6px 12px;
-            border-radius: 30px;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            transition: var(--transition);
-        }
-
-        .lang-switch:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 15px var(--accent-glow);
         }
 
         .lang-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.85rem;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 30px;
             cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 20px;
-            transition: var(--transition);
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
         }
 
-        .lang-btn.active {
+        .lang-btn:hover {
             background: var(--accent);
             color: var(--bg-color);
+            transform: translateY(-2px);
         }
 
-        /* Language Visibility Helpers */
-        [data-lang] {
-            display: none;
-        }
-        [data-lang].active-lang {
-            display: block;
-        }
-        span[data-lang], a[data-lang] {
-            display: none;
-        }
-        span[data-lang].active-lang, a[data-lang].active-lang {
-            display: inline;
-        }
+        /* Clases para control de idioma */
+        .lang-en { display: none; }
+        .lang-es { display: block; }
 
-        /* Header / Hero Section */
-        header {
+        body.english .lang-en { display: block; }
+        body.english .lang-es { display: none; }
+
+        /* Header con Partículas */
+        .header {
             position: relative;
-            height: 60vh;
+            height: 45vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: linear-gradient(to bottom, rgba(3, 7, 18, 0.7), var(--bg-color)), 
+                        url('https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/FotoBrand.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         #particles-js {
@@ -109,78 +90,82 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 1;
         }
 
-        .hero-content {
+        .header-content {
             position: relative;
             z-index: 2;
-            max-width: 700px;
+            text-align: center;
+            padding: 0 20px;
         }
 
-        .profile-avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent);
-            margin-bottom: 20px;
-            box-shadow: 0 0 25px var(--accent-glow);
-            transition: var(--transition);
-        }
-
-        .profile-avatar:hover {
-            transform: scale(1.05);
-        }
-
-        h1 {
-            font-size: 2.5rem;
+        .header-content h1 {
+            font-size: 2.8rem;
             font-weight: 700;
             letter-spacing: -0.5px;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+            margin-bottom: 10px;
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .subtitle {
+        .header-content p {
             font-size: 1.1rem;
             color: var(--text-muted);
             font-weight: 400;
-            letter-spacing: 0.5px;
         }
 
-        /* Main Container */
+        /* Contenedor Principal */
         .container {
             max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
+            margin: -40px auto 80px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 3;
         }
 
-        /* Sections */
-        section {
-            margin-bottom: 60px;
+        /* Secciones y Tarjetas */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
         }
 
         h2 {
             font-size: 1.5rem;
-            margin-bottom: 25px;
-            font-weight: 600;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #ffffff;
-            border-left: 3px solid var(--accent);
-            padding-left: 12px;
+            color: var(--text-main);
+        }
+
+        h2 i {
+            color: var(--accent);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: #f1f5f9;
         }
 
         p {
             color: var(--text-muted);
-            margin-bottom: 16px;
-            font-size: 1rem;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
         }
 
-        /* Tags / Skills */
+        /* Tags de habilidades */
         .tags-container {
             display: flex;
             flex-wrap: wrap;
@@ -190,110 +175,45 @@
 
         .tag {
             background: rgba(56, 189, 248, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.2);
             color: var(--accent);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 500;
-            transition: var(--transition);
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
-        .tag:hover {
-            background: rgba(56, 189, 248, 0.18);
-            transform: translateY(-2px);
+        .skills-text {
+            font-size: 0.9rem;
+            margin: 15px 0;
+            color: var(--text-muted);
         }
 
-        /* Project Cards */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(12px);
-            transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .skills-text b {
+            color: var(--text-main);
         }
 
-        .card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(56, 189, 248, 0.1);
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .skills-used {
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        /* Project Image Preview */
-        .project-preview {
+        /* Imagen de Proyecto */
+        .project-image-wrapper {
             position: relative;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             margin: 20px 0;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .project-preview img {
+        .project-image-wrapper img {
             width: 100%;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
 
-        .project-preview:hover img {
+        .project-image-wrapper:hover img {
             transform: scale(1.02);
         }
 
-        .preview-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(3, 7, 18, 0.75);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-            backdrop-filter: blur(4px);
-        }
-
-        .project-preview:hover .preview-overlay {
-            opacity: 1;
-        }
-
-        .preview-btn {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid var(--accent);
-            padding: 8px 18px;
-            border-radius: 30px;
-            background: rgba(56, 189, 248, 0.1);
-            transition: var(--transition);
-        }
-
-        .preview-btn:hover {
-            background: var(--accent);
-            color: var(--bg-color);
-            box-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        /* Action Buttons */
-        .button-group {
+        /* Botones de Acción */
+        .btn-group {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
@@ -305,89 +225,98 @@
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: var(--accent);
-            color: var(--bg-color);
-            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
             font-size: 0.9rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
-            filter: brightness(1.15);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+            background: var(--accent);
+            color: var(--bg-color);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
-            box-shadow: none;
+        .btn.primary {
+            background: var(--accent);
+            color: var(--bg-color);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: var(--accent);
-            color: var(--accent);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+        .btn.primary:hover {
+            background: #0ea5e9;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 40px 15px; }
+        @media (max-width: 768px) {
+            .header-content h1 { font-size: 2.1rem; }
+            .container { margin-top: -20px; }
+            .card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Language Selector -->
-    <div class="lang-switch" onclick="toggleLanguage()">
-        <button class="lang-btn active" id="btn-es">ES</button>
-        <span style="color: var(--text-muted);">/</span>
-        <button class="lang-btn" id="btn-en">EN</button>
+    <!-- Botón de cambio de idioma -->
+    <div class="lang-switch-container">
+        <button class="lang-btn" onclick="toggleLanguage()" id="langToggleBtn">
+            <i class="fa-solid fa-globe"></i> English / Español
+        </button>
     </div>
 
-    <!-- Hero Header -->
-    <header>
+    <!-- Header -->
+    <div class="header">
         <div id="particles-js"></div>
-        <div class="hero-content">
-            <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/FotoBrand.png?raw=true" alt="María Monsalve" class="profile-avatar">
+        <div class="header-content">
             <h1>María Monsalve</h1>
-            <p class="subtitle">
-                <span data-lang="es" class="active-lang">Geospatial Data Scientist | Environmental Intelligence</span>
-                <span data-lang="en">Geospatial Data Scientist | Environmental Intelligence</span>
-            </p>
+            <p class="lang-es">Geospatial Data Scientist | Environmental Intelligence</p>
+            <p class="lang-en">Geospatial Data Scientist | Environmental Intelligence</p>
         </div>
-    </header>
+    </div>
 
+    <!-- Script de Partículas e Idioma -->
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 50 },
+                color: { value: "#38bdf8" },
+                size: { value: 2 },
+                move: { speed: 0.5 },
+                line_linked: { enable: true, opacity: 0.15, color: "#38bdf8" }
+            },
+            interactivity: { events: { onhover: { enable: true, mode: "grab" } } }
+        });
+
+        function toggleLanguage() {
+            document.body.classList.toggle('english');
+            const btn = document.getElementById('langToggleBtn');
+            if (document.body.classList.contains('english')) {
+                btn.innerHTML = '<i class="fa-solid fa-globe"></i> Cambiar a Español';
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-globe"></i> English Version';
+            }
+        }
+    </script>
+
+    <!-- Contenido -->
     <div class="container">
 
-        <!-- About Section -->
-        <section>
-            <h2>
-                <span data-lang="es" class="active-lang">🌍 Sobre Mí</span>
-                <span data-lang="en">🌍 About Me</span>
-            </h2>
-            <p>
-                <span data-lang="es" class="active-lang">Mi mayor propósito se encuentra en la intersección entre la <b>Ciencia de Datos</b> y la <b>Gestión del Territorio</b>. A lo largo de mi trayectoria, he perfeccionado el arte de transformar capas de información geográfica en herramientas estratégicas para la toma de decisiones.</span>
-                <span data-lang="en">My greatest purpose lies at the intersection of <b>Data Science</b> and <b>Land Management</b>. Throughout my career, I have honed the art of transforming layers of geographic information into strategic decision-making tools.</span>
-            </p>
-            <p>
-                <span data-lang="es" class="active-lang">Me especializo en tender puentes entre los desafíos ambientales y las soluciones técnicas. Mi dominio en <b>ArcGIS, QGIS y Power BI</b>, combinado con una sólida base en <b>SQL y Python</b>, me permite abordar la complejidad espacial desde una perspectiva integral.</span>
-                <span data-lang="en">I specialize in bridging the gap between environmental challenges and technical solutions. My proficiency in <b>ArcGIS, QGIS, and Power BI</b>, combined with a solid foundation in <b>SQL and Python</b>, allows me to address spatial complexity from a holistic perspective.</span>
-            </p>
+        <!-- Sobre Mí -->
+        <div class="card">
+            <h2><i class="fa-solid fa-earth-americas"></i> <span class="lang-es">Sobre Mí</span><span class="lang-en">About Me</span></h2>
+            
+            <div class="lang-es">
+                <p>Mi mayor propósito se encuentra en la intersección entre la <b>Ciencia de Datos</b> y la <b>Gestión del Territorio</b>. A lo largo de mi trayectoria, he perfeccionado el arte de transformar capas de información geográfica en herramientas estratégicas para la toma de decisiones.</p>
+                <p>Me especializo en tender puentes entre los desafíos ambientales y las soluciones técnicas. Mi dominio en <b>ArcGIS, QGIS y Power BI</b>, combinado con una sólida formación en <b>SQL y Python</b>, me permite abordar la complejidad espacial desde una perspectiva integral.</p>
+            </div>
+            
+            <div class="lang-en">
+                <p>My greatest purpose lies at the intersection of <b>Data Science</b> and <b>Land Management</b>. Throughout my career, I have honed the art of transforming layers of geographic information into strategic decision-making tools.</p>
+                <p>I specialize in bridging the gap between environmental challenges and technical solutions. My proficiency in <b>ArcGIS, QGIS, and Power BI</b>, combined with a solid foundation in <b>SQL and Python</b>, allows me to address spatial complexity from a holistic perspective.</p>
+            </div>
 
             <div class="tags-container">
                 <span class="tag">Python (Pandas, GeoPandas)</span>
@@ -401,112 +330,71 @@
                 <span class="tag">Google Earth Engine</span>
                 <span class="tag">PostGIS</span>
             </div>
-        </section>
+        </div>
 
-        <!-- Projects Section -->
-        <section>
-            <h2>
-                <span data-lang="es" class="active-lang">📊 Proyectos</span>
-                <span data-lang="en">📊 Projects</span>
-            </h2>
+        <!-- Proyecto 1 -->
+        <div class="card">
+            <h2><i class="fa-solid fa-chart-line"></i> <span class="lang-es">Proyectos Destacados</span><span class="lang-en">Featured Projects</span></h2>
 
-            <!-- Project 1 -->
-            <div class="card">
-                <h3>
-                    <span data-lang="es" class="active-lang">Movilidad Urbana e Indicadores Económicos: Un Análisis Basado en Datos</span>
-                    <span data-lang="en">Urban Mobility & Economic Indicators: A Data-Driven Analysis</span>
-                </h3>
-                <p>
-                    <span data-lang="es" class="active-lang">Este proyecto analiza la compleja relación entre los patrones de movilidad urbana y los indicadores económicos clave en Latinoamérica. Mediante flujos de trabajo basados en Python, integro y estandarizo conjuntos de datos para orientar la planificación urbana inteligente.</span>
-                    <span data-lang="en">This project analyzes the intricate relationship between urban mobility patterns and key economic indicators in Latin America. Using Python-based workflows, I integrate datasets to inform data-driven urban planning.</span>
-                </p>
-                <div class="skills-used">
-                    <b>Skills:</b> Python 3.x, Pandas, NumPy, SQL, GeoPandas, Matplotlib, Seaborn, Power BI, Jupyter
-                </div>
+            <h3 class="lang-es">Movilidad Urbana e Indicadores Económicos: Un Análisis Basado en Datos</h3>
+            <h3 class="lang-en">Urban Mobility & Economic Indicators: A Data-Driven Analysis</h3>
 
-                <div class="project-preview">
-                    <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/grafico.png?raw=true" alt="Urban Mobility Visualization">
-                    <div class="preview-overlay">
-                        <a href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank" class="preview-btn">
-                            🔍 <span data-lang="es" class="active-lang">Ver Análisis Completo</span><span data-lang="en">View Full Analysis</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="button-group">
-                    <a href="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.ipynb" target="_blank" class="btn">
-                        💻 <span data-lang="es" class="active-lang">Ver Código (Notebook)</span><span data-lang="en">View Code (Notebook)</span>
-                    </a>
-                    <a href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank" class="btn btn-secondary">
-                        📈 <span data-lang="es" class="active-lang">Abrir Visualización</span><span data-lang="en">Open Visualization</span>
-                    </a>
-                </div>
+            <div class="lang-es">
+                <p>Este proyecto analiza la compleja relación entre los patrones de movilidad urbana y los indicadores económicos clave en Latinoamérica. Mediante flujos de trabajo basados en Python, integro, limpio y estandarizo conjuntos de datos diversos para obtener información que orienta la gestión territorial sostenible y la planificación urbana inteligente.</p>
+            </div>
+            <div class="lang-en">
+                <p>This project analyzes the intricate relationship between urban mobility patterns and key economic indicators in Latin America. Using Python-based data science workflows, I integrate, clean, and standardize diverse datasets to uncover insights that inform sustainable land management and data-driven urban planning.</p>
             </div>
 
-            <!-- Project 2 -->
-            <div class="card">
-                <h3>
-                    <span data-lang="es" class="active-lang">Proyecto RappiPlus: de Datos a Decisiones de Negocio</span>
-                    <span data-lang="en">RappiPlus Project: From Data to Business Decisions</span>
-                </h3>
-                <p>
-                    <span data-lang="es" class="active-lang">Evaluación del desempeño del servicio RappiPlus para respaldar decisiones comerciales mediante análisis exploratorio y lógica progresiva. Proyecto final del Bootcamp de Análisis de Datos en Tripleten.</span>
-                    <span data-lang="en">Evaluation of RappiPlus service performance to support business decisions through exploratory analysis and progressive logic. Final project for the Tripleten Data Analysis Bootcamp.</span>
-                </p>
-                <div class="skills-used">
-                    <b>Skills:</b> Python, Pandas, SQL, Jupyter Notebooks
-                </div>
-
-                <div class="button-group">
-                    <a href="https://github.com/mariamonsalve1305/analisis-clientes-telecomunicaciones" target="_blank" class="btn">
-                        📂 <span data-lang="es" class="active-lang">Ver Repositorio</span><span data-lang="en">View Repository</span>
-                    </a>
-                    <a href="https://nbviewer.org/github/mariamonsalve1305/analisis-clientes-telecomunicaciones/blob/main/S12_Estudiante_Proyecto_Final.ipynb" target="_blank" class="btn btn-secondary">
-                        📓 <span data-lang="es" class="active-lang">Ver Notebook Online</span><span data-lang="en">View Online Notebook</span>
-                    </a>
-                </div>
+            <div class="skills-text">
+                <b>Skills:</b> Python 3.x, Pandas, NumPy, SQL, GeoPandas, Matplotlib, Seaborn, Power BI, Jupyter Notebooks
             </div>
-        </section>
+
+            <div class="project-image-wrapper">
+                <a href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank">
+                    <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/grafico.png?raw=true" alt="Urban Mobility Project">
+                </a>
+            </div>
+
+            <div class="btn-group">
+                <a class="btn primary" href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank">
+                    <i class="fa-solid fa-eye"></i> <span class="lang-es">Ver Análisis Completo</span><span class="lang-en">View Full Analysis</span>
+                </a>
+                <a class="btn" href="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.ipynb" target="_blank">
+                    <i class="fa-solid fa-code"></i> <span class="lang-es">Ver Código (Notebook)</span><span class="lang-en">View Code (Notebook)</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Proyecto RappiPlus -->
+        <div class="card">
+            <h3 class="lang-es">Proyecto RappiPlus: de Datos a Decisiones de Negocio</h3>
+            <h3 class="lang-en">RappiPlus Project: From Data to Business Decisions</h3>
+
+            <div class="lang-es">
+                <p>El objetivo principal de este proyecto es evaluar el desempeño del servicio RappiPlus para respaldar decisiones de negocio basadas en datos. A través de un enfoque analítico, el proyecto sigue una lógica clara y progresiva para comprender la rentabilidad y el comportamiento de los usuarios.</p>
+                <p><i>Proyecto final del Bootcamp de Análisis de Datos en Tripleten.</i></p>
+            </div>
+            <div class="lang-en">
+                <p>The main objective of this project is to evaluate the performance of the RappiPlus service to support data-driven business decisions. Through an analytical approach, the project follows a clear and progressive logic to understand profitability and user behavior.</p>
+                <p><i>Final project for the Tripleten Data Analysis Bootcamp.</i></p>
+            </div>
+
+            <div class="skills-text">
+                <b>Skills:</b> Python, Pandas, SQL, Jupyter Notebooks
+            </div>
+
+            <div class="btn-group">
+                <a class="btn primary" href="https://github.com/mariamonsalve1305/analisis-clientes-telecomunicaciones" target="_blank">
+                    <i class="fa-brands fa-github"></i> <span class="lang-es">Ver Repositorio</span><span class="lang-en">View Repository</span>
+                </a>
+                <a class="btn" href="https://nbviewer.org/github/mariamonsalve1305/analisis-clientes-telecomunicaciones/blob/main/S12_Estudiante_Proyecto_Final.ipynb" target="_blank">
+                    <i class="fa-solid fa-book-open"></i> <span class="lang-es">Ver Notebook Online</span><span class="lang-en">View Notebook Online</span>
+                </a>
+            </div>
+        </div>
+
     </div>
 
-    <footer>
-        <p>© 2026 María Monsalve. <span data-lang="es" class="active-lang">Todos los derechos reservados.</span><span data-lang="en">All rights reserved.</span></p>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Particles Config
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 50 },
-                color: { value: "#38bdf8" },
-                size: { value: 2 },
-                move: { speed: 0.5 },
-                line_linked: { enable: true, opacity: 0.15, color: "#38bdf8" }
-            },
-            interactivity: {
-                events: { onhover: { enable: true, mode: "grab" } }
-            }
-        });
-
-        // Language Toggle Logic
-        let currentLang = 'es';
-        function toggleLanguage() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            
-            // Update buttons styling
-            document.getElementById('btn-es').classList.toggle('active', currentLang === 'es');
-            document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
-
-            // Toggle element visibility
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                if (el.getAttribute('data-lang') === currentLang) {
-                    el.classList.add('active-lang');
-                } else {
-                    el.classList.remove('active-lang');
-                }
-            });
-        }
-    </script>
 </body>
 </html>
