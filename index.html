@@ -140,6 +140,35 @@
             border-color: rgba(56, 189, 248, 0.4);
         }
 
+        /* Tarjeta Destacada Especial para el Proyecto Principal */
+        .card.featured {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(14, 116, 144, 0.15) 100%);
+            border: 2px solid rgba(56, 189, 248, 0.5);
+            box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card.featured:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px -5px rgba(56, 189, 248, 0.3);
+        }
+
+        .project-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-gradient);
+            color: var(--bg-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         h2 {
             font-size: 1.5rem;
             margin-bottom: 20px;
@@ -321,6 +350,7 @@
             <div class="tags-container">
                 <span class="tag">Python (Pandas, GeoPandas)</span>
                 <span class="tag">SQL</span>
+                <span class="tag">LLM</span>
                 <span class="tag">ETL Processes</span>
                 <span class="tag">Power BI</span>
                 <span class="tag">Tableau</span>
@@ -337,8 +367,12 @@
             <h2><i class="fa-solid fa-chart-line"></i> <span class="lang-es">Proyectos Destacados</span><span class="lang-en">Featured Projects</span></h2>
         </div>
 
-        <!-- Proyecto RappiPlus (Primero) -->
-        <div class="card">
+        <!-- Proyecto RappiPlus (Primero y Destacado / Capstone) -->
+        <div class="card featured">
+            <div class="project-badge">
+                <i class="fa-solid fa-star"></i> <span class="lang-es">Proyecto Principal • Bootcamp Capstone</span><span class="lang-en">Main Project • Bootcamp Capstone</span>
+            </div>
+
             <h3 class="lang-es">Proyecto RappiPlus: de Datos a Decisiones de Negocio</h3>
             <h3 class="lang-en">RappiPlus Project: From Data to Business Decisions</h3>
 
