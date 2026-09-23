@@ -1,87 +1,512 @@
-<p>
-    <span data-lang="es" class="active">Mi mayor propósito se encuentra en la intersección entre la <b>Ciencia de Datos</b> y la <b>Gestión del Territorio</b>. A lo largo de mi trayectoria, he perfeccionado el arte de transformar capas de información geográfica en herramientas estratégicas para la toma de decisiones.</span>
-    <span data-lang="en">My greatest purpose lies at the intersection of <b>Data Science</b> and <b>Land Management</b>. Throughout my career, I have honed the art of transforming layers of geographic information into strategic decision-making tools.</span>
-</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>María Monsalve | Geospatial Data Scientist</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-border: rgba(56, 189, 248, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-<p>
-    <span data-lang="es" class="active">Me especializo en tender puentes entre los desafíos ambientales y las soluciones técnicas. Mi dominio en <b>ArcGIS, QGIS y Power BI</b>, combinado con una sólida base en <b>SQL y Python</b>, me permite abordar la complejidad espacial desde una perspectiva integral.</span>
-    <span data-lang="en">I specialize in bridging the gap between environmental challenges and technical solutions. My proficiency in <b>ArcGIS, QGIS, and Power BI</b>, combined with a solid foundation in <b>SQL and Python</b>, allows me to address spatial complexity from a holistic perspective.</span>
-</p>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<!-- TAGS -->
-<div class="tags">
-    <span class="tag">Python (Pandas, GeoPandas)</span>
-    <span class="tag">SQL</span>
-    <span class="tag">ETL Processes</span>
-    <span class="tag">Power BI</span>
-    <span class="tag">Tableau</span>
-    <span class="tag">Looker</span>
-    <span class="tag">ArcGIS Pro</span>
-    <span class="tag">QGIS</span>
-    <span class="tag">Google Earth Engine</span>
-    <span class="tag">PostGIS</span>
-</div>
-<!-- PROYECTO 1 -->
-<div class="card">
-    <h3>
-        <span data-lang="es" class="active">Movilidad Urbana e Indicadores Económicos: Un Análisis Basado en Datos</span>
-        <span data-lang="en">Urban Mobility & Economic Indicators: A Data-Driven Analysis</span>
-    </h3>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    <p>
-        <span data-lang="es" class="active">Este proyecto analiza la compleja relación entre los patrones de movilidad urbana y los indicadores económicos clave en Latinoamérica. Mediante flujos de trabajo basados en Python, integro, limpio y estandarizo conjuntos de datos diversos para obtener información que orienta la gestión territorial sostenible y la planificación urbana inteligente.</span>
-        <span data-lang="en">This project analyzes the intricate relationship between urban mobility patterns and key economic indicators in Latin America. Using Python-based data science workflows, I integrate, clean, and standardize diverse datasets to uncover insights that inform sustainable land management and data-driven urban planning.</span>
-    </p>
+        /* Language Switcher */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid var(--card-border);
+            padding: 6px 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: var(--transition);
+        }
 
-    <div class="skills">
-        <b>Skills:</b> Python 3.x, Pandas, NumPy, SQL, GeoPandas, Matplotlib, Seaborn, Power BI, Jupyter Notebooks
+        .lang-switch:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        /* Language Visibility Helpers */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active-lang {
+            display: block;
+        }
+        span[data-lang], a[data-lang] {
+            display: none;
+        }
+        span[data-lang].active-lang, a[data-lang].active-lang {
+            display: inline;
+        }
+
+        /* Header / Hero Section */
+        header {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            margin-bottom: 20px;
+            box-shadow: 0 0 25px var(--accent-glow);
+            transition: var(--transition);
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        /* Tags / Skills */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: rgba(56, 189, 248, 0.18);
+            transform: translateY(-2px);
+        }
+
+        /* Project Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .skills-used {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* Project Image Preview */
+        .project-preview {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .project-preview img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .project-preview:hover img {
+            transform: scale(1.02);
+        }
+
+        .preview-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+        }
+
+        .project-preview:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .preview-btn {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--accent);
+            padding: 8px 18px;
+            border-radius: 30px;
+            background: rgba(56, 189, 248, 0.1);
+            transition: var(--transition);
+        }
+
+        .preview-btn:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* Action Buttons */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: var(--bg-color);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .btn:hover {
+            filter: brightness(1.15);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 40px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Selector -->
+    <div class="lang-switch" onclick="toggleLanguage()">
+        <button class="lang-btn active" id="btn-es">ES</button>
+        <span style="color: var(--text-muted);">/</span>
+        <button class="lang-btn" id="btn-en">EN</button>
     </div>
 
-    <!-- IMAGEN CLICKEABLE -->
-    <div class="project-image">
-        <a href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank">
-            <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/grafico.png?raw=true" alt="Project visualization">
-            <div class="overlay">
-                <span data-lang="es" class="active">🔍 Ver Análisis Completo</span>
-                <span data-lang="en">🔍 View Full Analysis</span>
+    <!-- Hero Header -->
+    <header>
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/FotoBrand.png?raw=true" alt="María Monsalve" class="profile-avatar">
+            <h1>María Monsalve</h1>
+            <p class="subtitle">
+                <span data-lang="es" class="active-lang">Geospatial Data Scientist | Environmental Intelligence</span>
+                <span data-lang="en">Geospatial Data Scientist | Environmental Intelligence</span>
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section>
+            <h2>
+                <span data-lang="es" class="active-lang">🌍 Sobre Mí</span>
+                <span data-lang="en">🌍 About Me</span>
+            </h2>
+            <p>
+                <span data-lang="es" class="active-lang">Mi mayor propósito se encuentra en la intersección entre la <b>Ciencia de Datos</b> y la <b>Gestión del Territorio</b>. A lo largo de mi trayectoria, he perfeccionado el arte de transformar capas de información geográfica en herramientas estratégicas para la toma de decisiones.</span>
+                <span data-lang="en">My greatest purpose lies at the intersection of <b>Data Science</b> and <b>Land Management</b>. Throughout my career, I have honed the art of transforming layers of geographic information into strategic decision-making tools.</span>
+            </p>
+            <p>
+                <span data-lang="es" class="active-lang">Me especializo en tender puentes entre los desafíos ambientales y las soluciones técnicas. Mi dominio en <b>ArcGIS, QGIS y Power BI</b>, combinado con una sólida base en <b>SQL y Python</b>, me permite abordar la complejidad espacial desde una perspectiva integral.</span>
+                <span data-lang="en">I specialize in bridging the gap between environmental challenges and technical solutions. My proficiency in <b>ArcGIS, QGIS, and Power BI</b>, combined with a solid foundation in <b>SQL and Python</b>, allows me to address spatial complexity from a holistic perspective.</span>
+            </p>
+
+            <div class="tags-container">
+                <span class="tag">Python (Pandas, GeoPandas)</span>
+                <span class="tag">SQL</span>
+                <span class="tag">ETL Processes</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Tableau</span>
+                <span class="tag">Looker</span>
+                <span class="tag">ArcGIS Pro</span>
+                <span class="tag">QGIS</span>
+                <span class="tag">Google Earth Engine</span>
+                <span class="tag">PostGIS</span>
             </div>
-        </a>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2>
+                <span data-lang="es" class="active-lang">📊 Proyectos</span>
+                <span data-lang="en">📊 Projects</span>
+            </h2>
+
+            <!-- Project 1 -->
+            <div class="card">
+                <h3>
+                    <span data-lang="es" class="active-lang">Movilidad Urbana e Indicadores Económicos: Un Análisis Basado en Datos</span>
+                    <span data-lang="en">Urban Mobility & Economic Indicators: A Data-Driven Analysis</span>
+                </h3>
+                <p>
+                    <span data-lang="es" class="active-lang">Este proyecto analiza la compleja relación entre los patrones de movilidad urbana y los indicadores económicos clave en Latinoamérica. Mediante flujos de trabajo basados en Python, integro y estandarizo conjuntos de datos para orientar la planificación urbana inteligente.</span>
+                    <span data-lang="en">This project analyzes the intricate relationship between urban mobility patterns and key economic indicators in Latin America. Using Python-based workflows, I integrate datasets to inform data-driven urban planning.</span>
+                </p>
+                <div class="skills-used">
+                    <b>Skills:</b> Python 3.x, Pandas, NumPy, SQL, GeoPandas, Matplotlib, Seaborn, Power BI, Jupyter
+                </div>
+
+                <div class="project-preview">
+                    <img src="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/grafico.png?raw=true" alt="Urban Mobility Visualization">
+                    <div class="preview-overlay">
+                        <a href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank" class="preview-btn">
+                            🔍 <span data-lang="es" class="active-lang">Ver Análisis Completo</span><span data-lang="en">View Full Analysis</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <a href="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.ipynb" target="_blank" class="btn">
+                        💻 <span data-lang="es" class="active-lang">Ver Código (Notebook)</span><span data-lang="en">View Code (Notebook)</span>
+                    </a>
+                    <a href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank" class="btn btn-secondary">
+                        📈 <span data-lang="es" class="active-lang">Abrir Visualización</span><span data-lang="en">Open Visualization</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card">
+                <h3>
+                    <span data-lang="es" class="active-lang">Proyecto RappiPlus: de Datos a Decisiones de Negocio</span>
+                    <span data-lang="en">RappiPlus Project: From Data to Business Decisions</span>
+                </h3>
+                <p>
+                    <span data-lang="es" class="active-lang">Evaluación del desempeño del servicio RappiPlus para respaldar decisiones comerciales mediante análisis exploratorio y lógica progresiva. Proyecto final del Bootcamp de Análisis de Datos en Tripleten.</span>
+                    <span data-lang="en">Evaluation of RappiPlus service performance to support business decisions through exploratory analysis and progressive logic. Final project for the Tripleten Data Analysis Bootcamp.</span>
+                </p>
+                <div class="skills-used">
+                    <b>Skills:</b> Python, Pandas, SQL, Jupyter Notebooks
+                </div>
+
+                <div class="button-group">
+                    <a href="https://github.com/mariamonsalve1305/analisis-clientes-telecomunicaciones" target="_blank" class="btn">
+                        📂 <span data-lang="es" class="active-lang">Ver Repositorio</span><span data-lang="en">View Repository</span>
+                    </a>
+                    <a href="https://nbviewer.org/github/mariamonsalve1305/analisis-clientes-telecomunicaciones/blob/main/S12_Estudiante_Proyecto_Final.ipynb" target="_blank" class="btn btn-secondary">
+                        📓 <span data-lang="es" class="active-lang">Ver Notebook Online</span><span data-lang="en">View Online Notebook</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- BOTONES DE ACCESO DIRECTO -->
-    <div class="button-group">
-        <a class="button" href="https://github.com/Mariamonsalve1305/MariaGeomatica/blob/main/Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.ipynb" target="_blank">
-            💻 <span data-lang="es" class="active">Ver Código (Notebook)</span><span data-lang="en">View Code (Notebook)</span>
-        </a>
-        <a class="button button-secondary" href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank">
-            📈 <span data-lang="es" class="active">Abrir Visualización</span><span data-lang="en">Open Visualization</span>
-        </a>
-    </div>
-</div>
+    <footer>
+        <p>© 2026 María Monsalve. <span data-lang="es" class="active-lang">Todos los derechos reservados.</span><span data-lang="en">All rights reserved.</span></p>
+    </footer>
 
-<!-- PROYECTO RAPPIPLUS -->
-<div class="card">
-    <h3>
-        <span data-lang="es" class="active">Proyecto RappiPlus: de Datos a Decisiones de Negocio</span>
-        <span data-lang="en">RappiPlus Project: From Data to Business Decisions</span>
-    </h3>
-    
-    <p>
-        <span data-lang="es" class="active">El objetivo principal de este proyecto es evaluar el desempeño del servicio RappiPlus para respaldar decisiones de negocio basadas en datos. A través de un enfoque analítico, el proyecto sigue una lógica clara y progresiva para comprender la rentabilidad y el comportamiento de los usuarios. Proyecto final del Bootcamp de Análisis de Datos en Tripleten.</span>
-        <span data-lang="en">The main objective of this project is to evaluate the performance of the RappiPlus service to support data-driven business decisions. Through an analytical approach, the project follows a clear and progressive logic to understand profitability and user behavior. Final project for the Tripleten Data Analysis Bootcamp.</span>
-    </p>
-    
-    <div class="skills">
-        <b>Skills:</b> Python, Pandas, SQL, Jupyter Notebooks
-    </div>
+    <!-- Scripts -->
+    <script>
+        // Particles Config
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 50 },
+                color: { value: "#38bdf8" },
+                size: { value: 2 },
+                move: { speed: 0.5 },
+                line_linked: { enable: true, opacity: 0.15, color: "#38bdf8" }
+            },
+            interactivity: {
+                events: { onhover: { enable: true, mode: "grab" } }
+            }
+        });
 
-    <!-- BOTONES DE ACCESO DIRECTO -->
-    <div class="button-group">
-        <a href="https://github.com/mariamonsalve1305/analisis-clientes-telecomunicaciones" target="_blank" class="button">
-            📂 <span data-lang="es" class="active">Ver Repositorio</span><span data-lang="en">View Repository</span>
-        </a>
-        <a href="https://nbviewer.org/github/mariamonsalve1305/analisis-clientes-telecomunicaciones/blob/main/S12_Estudiante_Proyecto_Final.ipynb" target="_blank" class="button button-secondary">
-            📓 <span data-lang="es" class="active">Ver Notebook Online</span><span data-lang="en">View Online Notebook</span>
-        </a>
-    </div>
-</div>
+        // Language Toggle Logic
+        let currentLang = 'es';
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            
+            // Update buttons styling
+            document.getElementById('btn-es').classList.toggle('active', currentLang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
+
+            // Toggle element visibility
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.getAttribute('data-lang') === currentLang) {
+                    el.classList.add('active-lang');
+                } else {
+                    el.classList.remove('active-lang');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
