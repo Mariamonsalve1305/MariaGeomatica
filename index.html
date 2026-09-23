@@ -36,15 +36,18 @@
             overflow-x: hidden;
         }
 
-        /* Botón de Idioma Flotante */
-        .lang-switch-container {
+        /* Controles Superiores (Idioma y Redes) */
+        .top-controls {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
 
-        .lang-btn {
+        .action-btn {
             background: rgba(15, 23, 42, 0.85);
             border: 1px solid var(--accent);
             color: var(--accent);
@@ -55,9 +58,14 @@
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
         }
 
-        .lang-btn:hover {
+        .action-btn:hover {
             background: var(--accent);
             color: var(--bg-color);
             transform: translateY(-2px);
@@ -154,6 +162,13 @@
             box-shadow: 0 20px 40px -5px rgba(56, 189, 248, 0.3);
         }
 
+        /* Tarjeta de Contacto */
+        .card.contact-card {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(14, 116, 144, 0.1) 0%, rgba(15, 23, 42, 0.98) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
         .project-badge {
             display: inline-flex;
             align-items: center;
@@ -192,6 +207,29 @@
             color: var(--text-muted);
             margin-bottom: 15px;
             font-size: 0.95rem;
+        }
+
+        /* Lista de Educación y Certificaciones */
+        .edu-item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 2px solid var(--accent);
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .edu-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 5px;
         }
 
         /* Tags de habilidades */
@@ -245,6 +283,7 @@
         .btn-group {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 12px;
             margin-top: 20px;
         }
@@ -284,14 +323,21 @@
             .header-content h1 { font-size: 2.1rem; }
             .container { margin-top: -20px; }
             .card { padding: 20px; }
+            .top-controls { top: 10px; right: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Botón de cambio de idioma -->
-    <div class="lang-switch-container">
-        <button class="lang-btn" onclick="toggleLanguage()" id="langToggleBtn">
+    <!-- Controles Superiores: Redes y Cambio de Idioma -->
+    <div class="top-controls">
+        <a href="https://www.linkedin.com/in/mariamonsalve1305" target="_blank" class="action-btn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/Mariamonsalve1305" target="_blank" class="action-btn" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <button class="action-btn" onclick="toggleLanguage()" id="langToggleBtn">
             <i class="fa-solid fa-globe"></i> English / Español
         </button>
     </div>
@@ -323,7 +369,7 @@
             document.body.classList.toggle('english');
             const btn = document.getElementById('langToggleBtn');
             if (document.body.classList.contains('english')) {
-                btn.innerHTML = '<i class="fa-solid fa-globe"></i> Cambiar a Español';
+                btn.innerHTML = '<i class="fa-solid fa-globe"></i> ES';
             } else {
                 btn.innerHTML = '<i class="fa-solid fa-globe"></i> English Version';
             }
@@ -362,6 +408,27 @@
             </div>
         </div>
 
+        <!-- Educación y Certificaciones -->
+        <div class="card">
+            <h2><i class="fa-solid fa-graduation-cap"></i> <span class="lang-es">Educación y Certificaciones</span><span class="lang-en">Education & Certifications</span></h2>
+            
+            <div class="edu-item">
+                <div class="edu-title lang-es">Bootcamp de Análisis de Datos</div>
+                <div class="edu-title lang-en">Data Analytics Bootcamp</div>
+                <div class="edu-subtitle">Tripleten (2026)</div>
+                <p class="lang-es">Formación intensiva orientada a la resolución de problemas de negocio mediante Python, SQL, Power BI y Tableau, aplicando metodologías analíticas y gestión de bases de datos.</p>
+                <p class="lang-en">Intensive training focused on solving business problems using Python, SQL, Power BI, and Tableau, applying analytical methodologies and database management.</p>
+            </div>
+
+            <div class="edu-item" style="margin-top: 25px;">
+                <div class="edu-title lang-es">Especialización en Geomática</div>
+                <div class="edu-title lang-en">Geomatics Specialization</div>
+                <div class="edu-subtitle"><span class="lang-es">Sistemas de Información Geográfica y Territorio</span><span class="lang-en">Geographic Information Systems & Land Management</span></div>
+                <p class="lang-es">Dominio avanzado en Sistemas de Información Geográfica (ArcGIS, QGIS, Google Earth Engine), modelamiento espacial y análisis geoestadístico aplicado a proyectos ambientales y territoriales.</p>
+                <p class="lang-en">Advanced proficiency in Geographic Information Systems (ArcGIS, QGIS, Google Earth Engine), spatial modeling, and geostatistical analysis applied to environmental and territorial projects.</p>
+            </div>
+        </div>
+
         <!-- Sección de Proyectos -->
         <div style="margin-bottom: 20px;">
             <h2><i class="fa-solid fa-chart-line"></i> <span class="lang-es">Proyectos Destacados</span><span class="lang-en">Featured Projects</span></h2>
@@ -386,7 +453,7 @@
             </div>
 
             <div class="skills-text">
-                <b>Skills:</b> Python, Pandas, NumPy, Seaborn, Matplotlib, Estadística Aplicada (Pruebas de Hipótesis), Análisis Exploratorio de Datos (ELT) y LLM  
+                <b>Skills:</b> Python, Pandas, SQL, Jupyter Notebooks
             </div>
 
             <div class="btn-group">
@@ -409,7 +476,7 @@
             </div>
 
             <div class="skills-text">
-                <b>Skills:</b> Python 3.x, Pandas, NumPy, SQL, Matplotlib, Seaborn, Power BI, Jupyter Notebooks
+                <b>Skills:</b> Python 3.x, Pandas, NumPy, SQL, GeoPandas, Matplotlib, Seaborn, Power BI, Jupyter Notebooks
             </div>
 
             <div class="project-image-wrapper">
@@ -421,6 +488,22 @@
             <div class="btn-group">
                 <a class="btn primary" href="Urban_Mobility_and_Economic_Productivity_in_Latin_American_Cities.html" target="_blank">
                     <i class="fa-solid fa-code"></i> <span class="lang-es">Ver Código (Notebook)</span><span class="lang-en">View Code (Notebook)</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta de Contacto / Call to Action -->
+        <div class="card contact-card">
+            <h2><i class="fa-solid fa-paper-plane"></i> <span class="lang-es">¿Conectamos?</span><span class="lang-en">Let's Connect?</span></h2>
+            <p class="lang-es">¿Tienes algún proyecto en mente, una oportunidad laboral o deseas que colaboremos? ¡Escríbeme y hablemos!</p>
+            <p class="lang-en">Do you have a project in mind, a job opportunity, or want to collaborate? Reach out and let's talk!</p>
+            
+            <div class="btn-group">
+                <a class="btn primary" href="mailto:betangeles@hotmail.com">
+                    <i class="fa-solid fa-envelope"></i> <span class="lang-es">Enviar un Correo</span><span class="lang-en">Send an Email</span>
+                </a>
+                <a class="btn" href="https://www.linkedin.com/in/mariamonsalve1305" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
                 </a>
             </div>
         </div>
